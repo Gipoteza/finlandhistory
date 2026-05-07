@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { TimelineEvent } from '@/lib/constants';
 import { sortTimelineEvents } from '@/lib/utils';
@@ -41,6 +41,8 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
         onMouseLeave={() => setShowTooltip(false)}
         onFocus={() => setShowTooltip(true)}
         onBlur={() => setShowTooltip(false)}
+        onTouchStart={() => setShowTooltip(true)}
+        onTouchEnd={() => setTimeout(() => setShowTooltip(false), 1500)}
         style={{
           position: 'relative',
           background: 'none',
@@ -93,7 +95,7 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
               fontSize: '0.75rem',
               color: isActive ? 'rgba(245, 240, 232, 0.9)' : 'rgba(245, 240, 232, 0.45)',
               letterSpacing: '0.03em',
-              maxWidth: isHorizontal ? '80px' : '160px',
+              maxWidth: isHorizontal ? '80px' : '200px',
               textAlign: isHorizontal ? 'center' : 'left',
               lineHeight: 1.3,
               transition: 'color 0.3s ease',
@@ -121,7 +123,7 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
               fontSize: '0.8rem',
               color: 'rgba(245, 240, 232, 0.85)',
               whiteSpace: isHorizontal ? 'nowrap' : 'normal',
-              maxWidth: isHorizontal ? 'none' : '180px',
+              maxWidth: isHorizontal ? 'none' : '200px',
               zIndex: 10,
               pointerEvents: 'none',
               letterSpacing: '0.02em',
@@ -140,11 +142,25 @@ export default function Timeline({ events, activeIndex }: TimelineProps) {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: '-10% 0px' });
 
+  // Determine layout via JS — avoids CSS class conflicts in Next.js App Router
+  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
   const sortedEvents = sortTimelineEvents(events);
 
-  return (
-    <>
-      {/* Desktop: horizontal timeline */}
+  // Before mount (SSR), render horizontal by default to avoid layout shift
+  const isHorizontal = !mounted || !isMobile;
+
+  if (isHorizontal) {
+    return (
       <div
         ref={containerRef}
         style={{
@@ -152,7 +168,6 @@ export default function Timeline({ events, activeIndex }: TimelineProps) {
           width: '100%',
           padding: '2rem 1rem',
         }}
-        className="timeline-desktop"
       >
         {/* Horizontal connecting line */}
         <div
@@ -188,64 +203,51 @@ export default function Timeline({ events, activeIndex }: TimelineProps) {
           ))}
         </div>
       </div>
+    );
+  }
 
-      {/* Mobile: vertical timeline */}
+  // Mobile: vertical layout
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        position: 'relative',
+        width: '100%',
+        padding: '1rem 0',
+      }}
+    >
+      {/* Vertical connecting line */}
       <div
         style={{
-          position: 'relative',
-          width: '100%',
-          padding: '1rem 0',
+          position: 'absolute',
+          top: '1rem',
+          bottom: '1rem',
+          left: '1.25rem',
+          width: '1px',
+          background: 'rgba(245, 240, 232, 0.15)',
         }}
-        className="timeline-mobile"
+        aria-hidden="true"
+      />
+
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1.5rem',
+          paddingLeft: '0.75rem',
+        }}
       >
-        {/* Vertical connecting line — aligned with dots at left: 1.25rem */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '1rem',
-            bottom: '1rem',
-            left: '1.25rem',
-            width: '1px',
-            background: 'rgba(245, 240, 232, 0.15)',
-          }}
-          aria-hidden="true"
-        />
-
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1.5rem',
-            paddingLeft: '0.75rem',
-          }}
-        >
-          {sortedEvents.map((event, index) => (
-            <TimelineDot
-              key={event.year}
-              event={event}
-              index={index}
-              isActive={activeIndex === index}
-              isVisible={isInView}
-              isHorizontal={false}
-            />
-          ))}
-        </div>
+        {sortedEvents.map((event, index) => (
+          <TimelineDot
+            key={event.year}
+            event={event}
+            index={index}
+            isActive={activeIndex === index}
+            isVisible={isInView}
+            isHorizontal={false}
+          />
+        ))}
       </div>
-
-      {/* Responsive visibility */}
-      <style>{`
-        .timeline-mobile {
-          display: none;
-        }
-        @media (max-width: 767px) {
-          .timeline-desktop {
-            display: none;
-          }
-          .timeline-mobile {
-            display: block;
-          }
-        }
-      `}</style>
-    </>
+    </div>
   );
 }
