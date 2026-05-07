@@ -109,7 +109,7 @@ export default function ChapterAutonomy() {
 
       {/* SplitScreen comparison */}
       <FadeInView delay={250} direction="none" className="autonomy-splitscreen-wrapper">
-        <div style={{ width: '100%', height: '260px' }}>
+        <div style={{ width: '100%', minHeight: '320px' }}>
           <SplitScreen
             leftLabel="Российская империя"
             rightLabel="Великое княжество Финляндское"
@@ -134,7 +134,7 @@ export default function ChapterAutonomy() {
       </FadeInView>
 
       {/* Autonomy attributes grid */}
-      <div style={{ maxWidth: '700px', width: '100%', marginBottom: '3rem' }}>
+      <div style={{ maxWidth: '900px', width: '100%', marginBottom: '3rem' }}>
         <StaggerReveal
           staggerDelay={150}
           className="autonomy-grid"
@@ -147,8 +147,8 @@ export default function ChapterAutonomy() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '0.5rem',
-                padding: '1rem',
+                gap: '0.75rem',
+                padding: '1.25rem',
                 background: 'rgba(255,255,255,0.04)',
                 borderRadius: '8px',
                 border: '1px solid rgba(201,168,76,0.15)',

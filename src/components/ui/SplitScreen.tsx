@@ -34,7 +34,8 @@ export default function SplitScreen({
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '2rem',
+          padding: '4rem 2rem 2rem',
+          minHeight: '200px',
         }}
         className="split-screen__left"
       >
@@ -42,14 +43,15 @@ export default function SplitScreen({
         <div
           style={{
             position: 'absolute',
-            top: '1.5rem',
-            left: '50%',
-            transform: 'translateX(-50%)',
+            top: '1rem',
+            left: 0,
+            right: 0,
+            textAlign: 'center',
+            padding: '0 0.5rem',
             fontSize: '1.1rem',
             textTransform: 'uppercase',
-            letterSpacing: '0.2em',
+            letterSpacing: '0.15em',
             color: 'rgba(245, 240, 232, 0.45)',
-            whiteSpace: 'nowrap',
           }}
         >
           {leftLabel}
@@ -79,7 +81,8 @@ export default function SplitScreen({
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '2rem',
+          padding: '4rem 2rem 2rem',
+          minHeight: '200px',
         }}
         className="split-screen__right"
       >
@@ -87,14 +90,15 @@ export default function SplitScreen({
         <div
           style={{
             position: 'absolute',
-            top: '1.5rem',
-            left: '50%',
-            transform: 'translateX(-50%)',
+            top: '1rem',
+            left: 0,
+            right: 0,
+            textAlign: 'center',
+            padding: '0 0.5rem',
             fontSize: '1.1rem',
             textTransform: 'uppercase',
-            letterSpacing: '0.2em',
+            letterSpacing: '0.15em',
             color: 'rgba(245, 240, 232, 0.45)',
-            whiteSpace: 'nowrap',
           }}
         >
           {rightLabel}
