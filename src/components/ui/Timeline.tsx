@@ -92,10 +92,10 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
           </span>
           <span
             style={{
-              fontSize: '1.4rem',
+              fontSize: isHorizontal ? '1.4rem' : '1.1rem',
               color: isActive ? 'rgba(245, 240, 232, 0.9)' : 'rgba(245, 240, 232, 0.45)',
               letterSpacing: '0.03em',
-              maxWidth: isHorizontal ? '100px' : '200px',
+              maxWidth: isHorizontal ? '130px' : '200px',
               textAlign: isHorizontal ? 'center' : 'left',
               lineHeight: 1.3,
               transition: 'color 0.3s ease',
@@ -166,41 +166,46 @@ export default function Timeline({ events, activeIndex }: TimelineProps) {
         style={{
           position: 'relative',
           width: '100%',
-          padding: '2rem 1rem',
+          overflowX: 'auto',
+          paddingBottom: '0.5rem',
         }}
       >
-        {/* Horizontal connecting line */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '2.75rem',
-            left: '2rem',
-            right: '2rem',
-            height: '1px',
-            background: 'rgba(245, 240, 232, 0.15)',
-          }}
-          aria-hidden="true"
-        />
+        {/* Inner container with min-width so items don't squish */}
+        <div style={{ minWidth: '900px', padding: '2rem 1rem', position: 'relative' }}>
+          {/* Horizontal connecting line */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '2.75rem',
+              left: '2rem',
+              right: '2rem',
+              height: '1px',
+              background: 'rgba(245, 240, 232, 0.15)',
+            }}
+            aria-hidden="true"
+          />
 
-        {/* Events row */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-start',
-            position: 'relative',
-          }}
-        >
-          {sortedEvents.map((event, index) => (
-            <TimelineDot
-              key={event.year}
-              event={event}
-              index={index}
-              isActive={activeIndex === index}
-              isVisible={isInView}
-              isHorizontal={true}
-            />
-          ))}
+          {/* Events row */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              position: 'relative',
+              gap: '0.5rem',
+            }}
+          >
+            {sortedEvents.map((event, index) => (
+              <TimelineDot
+                key={event.year}
+                event={event}
+                index={index}
+                isActive={activeIndex === index}
+                isVisible={isInView}
+                isHorizontal={true}
+              />
+            ))}
+          </div>
         </div>
       </div>
     );
