@@ -24,10 +24,11 @@ export function useSound(config: SoundConfig): UseSoundReturn {
     const audio = new Audio(config.src);
     audio.loop = true;
     audio.volume = 0;
+    audio.crossOrigin = 'anonymous';
+    audio.preload = 'none'; // don't preload — load on first play
     audioRef.current = audio;
 
     return () => {
-      // Cancel any ongoing fade animation
       if (fadeRafRef.current !== null) {
         cancelAnimationFrame(fadeRafRef.current);
         fadeRafRef.current = null;
@@ -114,12 +115,13 @@ export function useSound(config: SoundConfig): UseSoundReturn {
           fadeIn(config.defaultVolume, config.fadeInDuration);
         })
         .catch((error: unknown) => {
-          // Silently handle NotAllowedError (browser autoplay policy)
+          setIsPlaying(false);
+          // Log non-autoplay errors for debugging
           if (
             error instanceof DOMException &&
-            error.name === 'NotAllowedError'
+            error.name !== 'NotAllowedError'
           ) {
-            setIsPlaying(false);
+            console.warn('[useSound] playback error:', error.name, error.message);
           }
         });
     } else {

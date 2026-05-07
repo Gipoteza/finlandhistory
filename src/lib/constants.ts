@@ -53,10 +53,10 @@ export interface SoundConfig {
 }
 
 export const SOUND_CONFIG: SoundConfig = {
-  src: "/audio/ambient.mp3",
-  defaultVolume: 0.4,
-  fadeInDuration: 1000,
-  fadeOutDuration: 1000,
+  src: "https://ia801308.us.archive.org/28/items/SIBELIUSFinlandia-NEWTRANSFER/Sibelius-FinlandiaOp.26.mp3",
+  defaultVolume: 0.35,
+  fadeInDuration: 2000,
+  fadeOutDuration: 1500,
   autoplay: false,
 };
 
