@@ -58,21 +58,47 @@ export default function SoundController() {
   const { isPlaying, toggle } = useSound(SOUND_CONFIG);
 
   return (
-    <button
-      onClick={toggle}
-      aria-label={isPlaying ? 'Выключить звук' : 'Включить звук'}
-      className="fixed top-6 right-6 z-50 flex items-center gap-1.5 px-3 py-2 rounded-sm
-        bg-black/60 backdrop-blur-sm border border-white/10
-        text-cinema-cream/70 text-xs tracking-widest uppercase
-        transition-all duration-300 ease-in-out
-        hover:border-[#c9a84c]/60 hover:text-[#c9a84c] hover:bg-black/80
-        focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a84c]/50"
-      title={isPlaying ? 'Выключить звук' : 'Включить звук'}
-    >
-      {isPlaying ? <SpeakerOnIcon /> : <SpeakerOffIcon />}
-      <span className="font-light" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-        {isPlaying ? 'ON' : 'OFF'}
-      </span>
-    </button>
+    <div style={{ position: 'fixed', top: '1.5rem', right: '1.5rem', zIndex: 50, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      {/* Music info tooltip — shown when playing */}
+      {isPlaying && (
+        <div
+          style={{
+            background: 'rgba(10, 10, 10, 0.85)',
+            backdropFilter: 'blur(8px)',
+            border: '1px solid rgba(201, 168, 76, 0.25)',
+            borderRadius: '4px',
+            padding: '0.6rem 0.9rem',
+            maxWidth: '220px',
+            textAlign: 'right',
+          }}
+        >
+          <p style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontSize: '0.8rem', color: '#c9a84c', marginBottom: '0.2rem', lineHeight: 1.3 }}>
+            The Swan of Tuonela
+          </p>
+          <p style={{ fontFamily: 'sans-serif', fontSize: '0.7rem', color: 'rgba(245,240,232,0.5)', lineHeight: 1.4 }}>
+            Сибелиус · Орманди, 1940<br />
+            Из сюиты «Калевала»
+          </p>
+        </div>
+      )}
+
+      {/* Toggle button */}
+      <button
+        onClick={toggle}
+        aria-label={isPlaying ? 'Выключить звук' : 'Включить звук'}
+        className="flex items-center gap-1.5 px-3 py-2 rounded-sm
+          bg-black/60 backdrop-blur-sm border border-white/10
+          text-cinema-cream/70 text-xs tracking-widest uppercase
+          transition-all duration-300 ease-in-out
+          hover:border-[#c9a84c]/60 hover:text-[#c9a84c] hover:bg-black/80
+          focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a84c]/50"
+        title={isPlaying ? 'Выключить звук' : 'Включить звук'}
+      >
+        {isPlaying ? <SpeakerOnIcon /> : <SpeakerOffIcon />}
+        <span className="font-light" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+          {isPlaying ? 'ON' : 'OFF'}
+        </span>
+      </button>
+    </div>
   );
 }
