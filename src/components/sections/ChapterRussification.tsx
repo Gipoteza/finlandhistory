@@ -145,7 +145,7 @@ export default function ChapterRussification() {
         <FadeInView delay={250} direction="up">
           <p
             style={{
-              fontSize: 'clamp(0.85rem, 1.5vw, 1rem)',
+              fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
               fontFamily: 'sans-serif',
               color: 'rgba(245,240,232,0.6)',
               lineHeight: 1.75,
@@ -184,7 +184,7 @@ export default function ChapterRussification() {
                 borderLeft: '3px solid rgba(139,26,26,0.7)',
                 padding: '0.75rem 1rem',
                 fontFamily: '"Times New Roman", Georgia, serif',
-                fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
+                fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
                 color: 'rgba(245,240,232,0.8)',
                 letterSpacing: '0.04em',
               }}
@@ -208,7 +208,7 @@ export default function ChapterRussification() {
           >
             <p
               style={{
-                fontSize: '0.65rem',
+                fontSize: '0.8rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.2em',
                 color: 'rgba(139,26,26,0.8)',
@@ -220,7 +220,7 @@ export default function ChapterRussification() {
             </p>
             <p
               style={{
-                fontSize: 'clamp(0.8rem, 1.4vw, 0.9rem)',
+                fontSize: 'clamp(0.95rem, 1.4vw, 1.05rem)',
                 fontFamily: 'sans-serif',
                 color: 'rgba(245,240,232,0.65)',
                 lineHeight: 1.7,

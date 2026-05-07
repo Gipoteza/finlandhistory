@@ -157,7 +157,7 @@ export default function ChapterIndependence() {
         <FadeInView delay={250} direction="up">
           <p
             style={{
-              fontSize: 'clamp(0.85rem, 1.5vw, 1rem)',
+              fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
               fontFamily: 'sans-serif',
               color: 'rgba(245,240,232,0.65)',
               lineHeight: 1.75,
@@ -199,7 +199,7 @@ export default function ChapterIndependence() {
             <FadeInView key={date} delay={550 + index * 150} direction="up">
               <p
                 style={{
-                  fontSize: 'clamp(0.8rem, 1.4vw, 0.95rem)',
+                  fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
                   fontFamily: 'sans-serif',
                   color: 'rgba(245,240,232,0.7)',
                   letterSpacing: '0.03em',

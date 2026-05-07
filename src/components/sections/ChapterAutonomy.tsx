@@ -116,7 +116,7 @@ export default function ChapterAutonomy() {
             leftContent={
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
                 <RussianEagleSVG />
-                <p style={{ fontSize: '0.8rem', color: 'rgba(245,240,232,0.6)', fontFamily: 'sans-serif', textAlign: 'center' }}>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(245,240,232,0.6)', fontFamily: 'sans-serif', textAlign: 'center' }}>
                   Единая империя
                 </p>
               </div>
@@ -124,7 +124,7 @@ export default function ChapterAutonomy() {
             rightContent={
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
                 <FinnishLionSVG />
-                <p style={{ fontSize: '0.8rem', color: 'rgba(245,240,232,0.6)', fontFamily: 'sans-serif', textAlign: 'center' }}>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(245,240,232,0.6)', fontFamily: 'sans-serif', textAlign: 'center' }}>
                   Особый статус
                 </p>
               </div>
@@ -160,7 +160,7 @@ export default function ChapterAutonomy() {
               </span>
               <span
                 style={{
-                  fontSize: '0.7rem',
+                  fontSize: '0.85rem',
                   color: 'rgba(245,240,232,0.7)',
                   fontFamily: 'sans-serif',
                   textAlign: 'center',
@@ -203,7 +203,7 @@ export default function ChapterAutonomy() {
           style={{
             maxWidth: '560px',
             textAlign: 'center',
-            fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
+            fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
             fontFamily: 'sans-serif',
             color: 'rgba(245,240,232,0.5)',
             lineHeight: 1.7,

@@ -57,7 +57,7 @@
     - Framer Motion stagger wrapper с `staggerDelay` (default: 150 мс)
     - Каждый дочерний элемент получает задержку `index * staggerDelay`
     - _Requirements: 4.5_
-  - [ ] 4.3 Написать property-тест для StaggerReveal (Property 4)
+  - [~] 4.3 Написать property-тест для StaggerReveal (Property 4)
     - **Property 4: Stagger reveal interval invariant**
     - Реализовать `computeStaggerDelays(iconCount, staggerDelay)` в `src/lib/utils.ts`
     - Написать тест с `fast-check`: для любого `iconCount` (1–12) и `staggerDelay` (0–150) разница между соседними задержками не превышает 150 мс
@@ -70,15 +70,15 @@
     - Реализовать `sortTimelineEvents(events)`: сортировка по году (ascending)
     - Реализовать `simulateSoundToggles(toggleSequence, targetVolume)`: симуляция состояния звука
     - _Requirements: 11.3, 11.4, 4.5, 10.1, 9.2, 9.3_
-  - [ ] 5.2 Написать property-тест для системы частиц (Property 1)
+  - [~] 5.2 Написать property-тест для системы частиц (Property 1)
     - **Property 1: Particle count respects viewport constraints**
     - Написать тест с `fast-check`: для любого `viewportWidth` (320–2560) и `requestedCount` (50–200) результат `resolveParticleCount` соответствует ограничениям (desktop: 50–200, mobile: 0–80)
     - **Validates: Requirements 11.3, 11.4**
-  - [ ] 5.3 Написать property-тест для Timeline (Property 3)
+  - [~] 5.3 Написать property-тест для Timeline (Property 3)
     - **Property 3: Timeline events are in chronological order**
     - Написать тест с `fast-check`: для любого перемешанного подмножества `TIMELINE_EVENTS` функция `sortTimelineEvents` возвращает строго возрастающий порядок годов
     - **Validates: Requirements 10.1**
-  - [ ] 5.4 Написать property-тест для SoundController (Property 2)
+  - [~] 5.4 Написать property-тест для SoundController (Property 2)
     - **Property 2: Sound fade timing invariant**
     - Написать тест с `fast-check`: для любой последовательности toggle-действий (1–20) и `targetVolume` (0.1–1.0) функция `simulateSoundToggles` возвращает корректный финальный volume
     - **Validates: Requirements 9.2, 9.3**
@@ -139,7 +139,7 @@
     - Проверить наличие заголовка, подзаголовка «1809–1917» и индикатора «Scroll to begin ↓»
     - _Requirements: 2.3, 2.4, 2.5_
 
-- [~] 10. Chapter1809 (Экран 2)
+- [ ] 10. Chapter1809 (Экран 2)
   - [x] 10.1 Создать `src/components/sections/Chapter1809.tsx`
     - Заголовок «1809 — Финляндия переходит Российской империи»
     - Подключить `MapComponent` (вариант `'transition-1809'`) — анимация смены границ при входе в viewport
@@ -150,7 +150,7 @@
     - Текстура старой бумаги/пергамента как фон
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 13.3_
 
-- [~] 11. ChapterAutonomy (Экран 3)
+- [ ] 11. ChapterAutonomy (Экран 3)
   - [x] 11.1 Создать `src/components/sections/ChapterAutonomy.tsx`
     - Заголовок «Почти отдельное государство внутри империи»
     - Подключить `SplitScreen` (левая: символика России, правая: символы Финляндии)
@@ -159,7 +159,7 @@
     - Цитата: «Финляндия формально принадлежала России, но жила почти как отдельное государство»
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6_
 
-- [~] 12. ChapterGoldenAge (Экран 4)
+- [ ] 12. ChapterGoldenAge (Экран 4)
   - [x] 12.1 Создать `src/components/sections/ChapterGoldenAge.tsx`
     - Заголовок «Золотой век Финляндии»
     - Золотистая цветовая палитра (accent: gold/amber), контрастирующая с тёмными главами
@@ -169,7 +169,7 @@
     - Исторические фотографии Хельсинки через `next/image` с lazy loading
     - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 12.5_
 
-- [~] 13. ChapterRussification (Экран 5)
+- [ ] 13. ChapterRussification (Экран 5)
   - [x] 13.1 Создать `src/components/sections/ChapterRussification.tsx`
     - Заголовок «Русификация и сопротивление»
     - GSAP glitch-переход при входе в viewport (затемнение + красные цветовые наложения)
@@ -180,7 +180,7 @@
     - Текстура пергамента как фон
     - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 13.3_
 
-- [~] 14. ChapterIndependence (Экран 6)
+- [ ] 14. ChapterIndependence (Экран 6)
   - [x] 14.1 Создать `src/components/sections/ChapterIndependence.tsx`
     - Заголовок «1917 — рождение независимой Финляндии»
     - GSAP анимация перехода от тёмной атмосферы к светлой (тьма → свет) при входе в viewport
@@ -190,7 +190,7 @@
     - Ключевые даты: революция 1917 года, 6 декабря 1917 — провозглашение независимости, признание Лениным
     - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5, 7.6_
 
-- [~] 15. FinalScreen (Экран 7)
+- [ ] 15. FinalScreen (Экран 7)
   - [x] 15.1 Создать `src/components/sections/FinalScreen.tsx`
     - Финальный текст: «История Великого княжества Финляндского — это история того, как автономия превратилась в государственность»
     - Визуальные элементы современной Финляндии (Хельсинки, природа, флаг) через `next/image` с lazy loading

@@ -150,7 +150,7 @@ export default function FinalScreen() {
                 </span>
                 <p
                   style={{
-                    fontSize: 'clamp(0.85rem, 1.5vw, 1rem)',
+                    fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
                     fontFamily: 'sans-serif',
                     color: 'rgba(26,26,46,0.75)',
                     lineHeight: 1.65,

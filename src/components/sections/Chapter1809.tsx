@@ -80,7 +80,7 @@ export default function Chapter1809() {
           <FadeInView delay={100} direction="none">
             <p
               style={{
-                fontSize: '0.65rem',
+                fontSize: '0.8rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.25em',
                 color: '#c9a84c',
@@ -95,7 +95,7 @@ export default function Chapter1809() {
           <FadeInView delay={200} direction="up">
             <h2
               style={{
-                fontSize: 'clamp(1.4rem, 3vw, 2.2rem)',
+                fontSize: 'clamp(1.6rem, 3vw, 2.4rem)',
                 fontFamily: 'Georgia, "Times New Roman", serif',
                 fontWeight: 700,
                 color: '#f5f0e8',
@@ -110,7 +110,7 @@ export default function Chapter1809() {
           <FadeInView delay={350} direction="up">
             <p
               style={{
-                fontSize: 'clamp(0.85rem, 1.5vw, 1rem)',
+                fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
                 fontFamily: 'sans-serif',
                 color: 'rgba(245, 240, 232, 0.7)',
                 lineHeight: 1.7,

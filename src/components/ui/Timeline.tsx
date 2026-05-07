@@ -78,7 +78,7 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
         >
           <span
             style={{
-              fontSize: '0.7rem',
+              fontSize: '0.85rem',
               fontWeight: 'bold',
               color: isActive ? '#c9a84c' : 'rgba(245, 240, 232, 0.7)',
               letterSpacing: '0.05em',
@@ -90,13 +90,14 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
           </span>
           <span
             style={{
-              fontSize: '0.6rem',
+              fontSize: '0.75rem',
               color: isActive ? 'rgba(245, 240, 232, 0.9)' : 'rgba(245, 240, 232, 0.45)',
               letterSpacing: '0.03em',
-              maxWidth: isHorizontal ? '80px' : '120px',
+              maxWidth: isHorizontal ? '80px' : '160px',
               textAlign: isHorizontal ? 'center' : 'left',
               lineHeight: 1.3,
               transition: 'color 0.3s ease',
+              wordBreak: 'break-word',
             }}
           >
             {event.label}
@@ -110,21 +111,21 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
             style={{
               position: 'absolute',
               bottom: isHorizontal ? 'calc(100% + 8px)' : 'auto',
-              left: isHorizontal ? '50%' : 'calc(100% + 8px)',
-              top: isHorizontal ? 'auto' : '50%',
-              transform: isHorizontal
-                ? 'translateX(-50%)'
-                : 'translateY(-50%)',
+              top: isHorizontal ? 'auto' : 'calc(100% + 4px)',
+              left: isHorizontal ? '50%' : '0',
+              transform: isHorizontal ? 'translateX(-50%)' : 'none',
               background: 'rgba(10, 10, 10, 0.92)',
               border: '1px solid rgba(201, 168, 76, 0.3)',
               borderRadius: '4px',
               padding: '0.4rem 0.6rem',
-              fontSize: '0.65rem',
+              fontSize: '0.8rem',
               color: 'rgba(245, 240, 232, 0.85)',
-              whiteSpace: 'nowrap',
+              whiteSpace: isHorizontal ? 'nowrap' : 'normal',
+              maxWidth: isHorizontal ? 'none' : '180px',
               zIndex: 10,
               pointerEvents: 'none',
               letterSpacing: '0.02em',
+              lineHeight: 1.4,
             }}
           >
             {event.description}
@@ -193,17 +194,17 @@ export default function Timeline({ events, activeIndex }: TimelineProps) {
         style={{
           position: 'relative',
           width: '100%',
-          padding: '1rem 1.5rem',
+          padding: '1rem 0',
         }}
         className="timeline-mobile"
       >
-        {/* Vertical connecting line */}
+        {/* Vertical connecting line — aligned with dots at left: 1.25rem */}
         <div
           style={{
             position: 'absolute',
             top: '1rem',
             bottom: '1rem',
-            left: '2rem',
+            left: '1.25rem',
             width: '1px',
             background: 'rgba(245, 240, 232, 0.15)',
           }}
@@ -214,8 +215,8 @@ export default function Timeline({ events, activeIndex }: TimelineProps) {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '1.25rem',
-            paddingLeft: '1rem',
+            gap: '1.5rem',
+            paddingLeft: '0.75rem',
           }}
         >
           {sortedEvents.map((event, index) => (
