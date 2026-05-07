@@ -18,7 +18,7 @@ export default function ScrollIndicator() {
         userSelect: 'none',
       }}
     >
-      Scroll to begin ↓
+      Листай вниз ↓
     </motion.div>
   );
 }
