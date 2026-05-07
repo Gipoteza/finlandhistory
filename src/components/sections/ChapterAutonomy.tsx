@@ -160,7 +160,7 @@ export default function ChapterAutonomy() {
               </span>
               <span
                 style={{
-                  fontSize: '0.85rem',
+                  fontSize: '1.6rem',
                   color: 'rgba(245,240,232,0.7)',
                   fontFamily: 'sans-serif',
                   textAlign: 'center',

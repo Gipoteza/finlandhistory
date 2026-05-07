@@ -208,7 +208,7 @@ export default function ChapterRussification() {
           >
             <p
               style={{
-                fontSize: '0.8rem',
+                fontSize: '1.5rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.2em',
                 color: 'rgba(139,26,26,0.8)',

@@ -72,7 +72,7 @@ export default function HeroSection() {
         <FadeInView delay={200} direction="none">
           <p
             style={{
-              fontSize: '0.8rem',
+              fontSize: '1.5rem',
               textTransform: 'uppercase',
               letterSpacing: '0.25em',
               color: '#c9a84c',

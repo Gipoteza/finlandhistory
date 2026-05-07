@@ -80,7 +80,7 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
         >
           <span
             style={{
-              fontSize: '0.85rem',
+              fontSize: '1.6rem',
               fontWeight: 'bold',
               color: isActive ? '#c9a84c' : 'rgba(245, 240, 232, 0.7)',
               letterSpacing: '0.05em',
@@ -92,7 +92,7 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
           </span>
           <span
             style={{
-              fontSize: '0.75rem',
+              fontSize: '1.4rem',
               color: isActive ? 'rgba(245, 240, 232, 0.9)' : 'rgba(245, 240, 232, 0.45)',
               letterSpacing: '0.03em',
               maxWidth: isHorizontal ? '80px' : '200px',
@@ -120,7 +120,7 @@ function TimelineDot({ event, index, isActive, isVisible, isHorizontal }: Timeli
               border: '1px solid rgba(201, 168, 76, 0.3)',
               borderRadius: '4px',
               padding: '0.4rem 0.6rem',
-              fontSize: '0.8rem',
+              fontSize: '1.5rem',
               color: 'rgba(245, 240, 232, 0.85)',
               whiteSpace: isHorizontal ? 'nowrap' : 'normal',
               maxWidth: isHorizontal ? 'none' : '200px',

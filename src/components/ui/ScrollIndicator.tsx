@@ -11,7 +11,7 @@ export default function ScrollIndicator() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: '0.75rem',
+        fontSize: '1.4rem',
         textTransform: 'uppercase',
         letterSpacing: '0.15em',
         color: 'rgba(245, 240, 232, 0.5)',
