@@ -68,22 +68,6 @@ export default function HeroSection() {
           width: '100%',
         }}
       >
-        {/* Date label */}
-        <FadeInView delay={200} direction="none">
-          <p
-            style={{
-              fontSize: '1.5rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.25em',
-              color: '#c9a84c',
-              marginBottom: '1rem',
-              fontFamily: 'sans-serif',
-            }}
-          >
-            1809 — 1917
-          </p>
-        </FadeInView>
-
         {/* Subheading year */}
         <FadeInView delay={300} direction="up">
           <p
