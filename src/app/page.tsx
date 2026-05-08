@@ -4,6 +4,7 @@ import ChapterAutonomy from '@/components/sections/ChapterAutonomy';
 import ChapterGoldenAge from '@/components/sections/ChapterGoldenAge';
 import ChapterRussification from '@/components/sections/ChapterRussification';
 import ChapterIndependence from '@/components/sections/ChapterIndependence';
+import ChapterKalevala from '@/components/sections/ChapterKalevala';
 import FinalScreen from '@/components/sections/FinalScreen';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <ChapterGoldenAge />
       <ChapterRussification />
       <ChapterIndependence />
+      <ChapterKalevala />
       <FinalScreen />
     </main>
   );
