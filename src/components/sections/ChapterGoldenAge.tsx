@@ -124,8 +124,10 @@ export default function ChapterGoldenAge() {
 
         {/* Timeline */}
         <FadeInView delay={450} direction="none" className="golden-timeline-wrapper">
-          <div style={{ width: '100%' }}>
-            <Timeline events={TIMELINE_EVENTS} />
+          <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ width: '100%', maxWidth: '600px' }}>
+              <Timeline events={TIMELINE_EVENTS} />
+            </div>
           </div>
         </FadeInView>
 
