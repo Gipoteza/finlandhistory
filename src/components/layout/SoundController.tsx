@@ -67,17 +67,19 @@ export default function SoundController() {
             backdropFilter: 'blur(8px)',
             border: '1px solid rgba(201, 168, 76, 0.25)',
             borderRadius: '4px',
-            padding: '0.6rem 0.9rem',
-            maxWidth: '220px',
+            padding: '0.75rem 1rem',
+            maxWidth: '260px',
             textAlign: 'right',
           }}
         >
-          <p style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontSize: '0.8rem', color: '#c9a84c', marginBottom: '0.2rem', lineHeight: 1.3 }}>
-            The Swan of Tuonela
+          <p style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontSize: '0.85rem', color: '#c9a84c', marginBottom: '0.3rem', lineHeight: 1.3 }}>
+            Karelia Suite, Op. 11
           </p>
-          <p style={{ fontFamily: 'sans-serif', fontSize: '0.7rem', color: 'rgba(245,240,232,0.5)', lineHeight: 1.4 }}>
-            Сибелиус · Орманди, 1940<br />
-            Из сюиты «Калевала»
+          <p style={{ fontFamily: 'sans-serif', fontSize: '0.72rem', color: 'rgba(245,240,232,0.7)', lineHeight: 1.5, marginBottom: '0.3rem' }}>
+            Ян Сибелиус · 1893
+          </p>
+          <p style={{ fontFamily: 'sans-serif', fontSize: '0.68rem', color: 'rgba(245,240,232,0.45)', lineHeight: 1.5 }}>
+            Написана как гимн финской земле Карелии. Три части: торжественная, лирическая и маршевая. Орманди, Филадельфийский оркестр.
           </p>
         </div>
       )}

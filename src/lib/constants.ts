@@ -53,7 +53,7 @@ export interface SoundConfig {
 }
 
 export const SOUND_CONFIG: SoundConfig = {
-  src: "https://ia902809.us.archive.org/34/items/TheSwanOfTuonela/Sibelius_Ormandy_The_Swan_Of_Tuonela.mp3",
+  src: "https://ia801301.us.archive.org/13/items/sibelius-violin-concerto-op.-47-karelia-suite-op.-11-isaac-stern-eugene-ormandy-dvg/(04-06)%20Sibelius%20%20-%20Karelia%20Suite%2C%20Op.%2011.mp3",
   defaultVolume: 0.35,
   fadeInDuration: 2000,
   fadeOutDuration: 1500,
