@@ -7,12 +7,12 @@ import FadeInView from '@/components/animations/FadeInView';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const AUTONOMY_ATTRIBUTES = [
-  { emoji: '🏛️', label: 'Парламент (Сейм)' },
-  { emoji: '💰', label: 'Собственная валюта' },
-  { emoji: '⚔️', label: 'Армия' },
-  { emoji: '📜', label: 'Законы' },
-  { emoji: '🎭', label: 'Культура и язык' },
-  { emoji: '📮', label: 'Почта' },
+  { emoji: '🏛️', label: 'Парламент', sublabel: 'Сейм с 1809 года' },
+  { emoji: '💰', label: 'Валюта', sublabel: 'Финская марка с 1860' },
+  { emoji: '⚔️', label: 'Армия', sublabel: 'Собственные войска' },
+  { emoji: '📜', label: 'Законы', sublabel: 'Своя правовая система' },
+  { emoji: '🎭', label: 'Культура', sublabel: 'Язык и идентичность' },
+  { emoji: '📮', label: 'Почта', sublabel: 'Независимая служба' },
 ];
 
 function RussianEagleSVG() {
@@ -134,7 +134,7 @@ export default function ChapterAutonomy() {
       </FadeInView>
 
       {/* Autonomy attributes grid */}
-      <div style={{ maxWidth: '900px', width: '100%', marginBottom: '3rem' }}>
+      <div style={{ maxWidth: '900px', width: '100%', marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
         <StaggerReveal
           staggerDelay={150}
           className="autonomy-grid"
@@ -142,32 +142,47 @@ export default function ChapterAutonomy() {
           {AUTONOMY_ATTRIBUTES.map((attr) => (
             <motion.div
               key={attr.label}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.3)' }}
+              whileHover={{ scale: 1.05, filter: 'brightness(1.3)' }}
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '0.75rem',
-                padding: '1.25rem',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                padding: '1.5rem 1rem',
                 background: 'rgba(255,255,255,0.04)',
                 borderRadius: '8px',
                 border: '1px solid rgba(201,168,76,0.15)',
                 cursor: 'default',
+                minHeight: '130px',
               }}
             >
-              <span style={{ fontSize: '1.75rem' }} role="img" aria-label={attr.label}>
+              <span style={{ fontSize: '2rem' }} role="img" aria-label={attr.label}>
                 {attr.emoji}
               </span>
               <span
                 style={{
-                  fontSize: '1.6rem',
-                  color: 'rgba(245,240,232,0.7)',
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  color: 'rgba(245,240,232,0.85)',
                   fontFamily: 'sans-serif',
                   textAlign: 'center',
                   letterSpacing: '0.03em',
+                  lineHeight: 1.3,
                 }}
               >
                 {attr.label}
+              </span>
+              <span
+                style={{
+                  fontSize: '0.8rem',
+                  color: 'rgba(245,240,232,0.4)',
+                  fontFamily: 'sans-serif',
+                  textAlign: 'center',
+                  lineHeight: 1.4,
+                }}
+              >
+                {attr.sublabel}
               </span>
             </motion.div>
           ))}
@@ -224,6 +239,9 @@ export default function ChapterAutonomy() {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 1rem;
+          width: 100%;
+          max-width: 700px;
+          margin: 0 auto;
         }
         @media (max-width: 767px) {
           .autonomy-grid {
