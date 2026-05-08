@@ -149,8 +149,8 @@ export default function Chapter1809() {
           <FadeInView delay={650} direction="none">
             <div aria-hidden="true" style={{ opacity: 0.35 }}>
               <svg
-                width="64"
-                height="64"
+                width="256"
+                height="256"
                 viewBox="0 0 64 64"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -160,10 +160,10 @@ export default function Chapter1809() {
                 <circle cx="32" cy="32" r="24" stroke="#c9a84c" strokeWidth="0.75" />
                 <text
                   x="32"
-                  y="28"
+                  y="26"
                   textAnchor="middle"
                   fill="#c9a84c"
-                  fontSize="8"
+                  fontSize="7"
                   fontFamily="serif"
                   letterSpacing="1"
                 >
@@ -171,10 +171,10 @@ export default function Chapter1809() {
                 </text>
                 <text
                   x="32"
-                  y="38"
+                  y="35"
                   textAnchor="middle"
                   fill="#c9a84c"
-                  fontSize="8"
+                  fontSize="7"
                   fontFamily="serif"
                   letterSpacing="1"
                 >
@@ -182,10 +182,21 @@ export default function Chapter1809() {
                 </text>
                 <text
                   x="32"
-                  y="48"
+                  y="44"
                   textAnchor="middle"
                   fill="#c9a84c"
                   fontSize="6"
+                  fontFamily="serif"
+                  letterSpacing="1"
+                >
+                  ФИНЛЯНДСКОЕ
+                </text>
+                <text
+                  x="32"
+                  y="53"
+                  textAnchor="middle"
+                  fill="#c9a84c"
+                  fontSize="5.5"
                   fontFamily="serif"
                   letterSpacing="1"
                 >
